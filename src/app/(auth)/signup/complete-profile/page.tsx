@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useFirebase } from '@/firebase';
 import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 import { doc, serverTimestamp } from 'firebase/firestore';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -39,7 +39,7 @@ const profileFormSchema = z.object({
 
 type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
-export default function CompleteProfilePage() {
+function CompleteProfileContent() {
   const { toast } = useToast();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -171,5 +171,13 @@ export default function CompleteProfilePage() {
             </Form>
         </CardContent>
     </Card>
+  );
+}
+
+export default function CompleteProfilePage() {
+  return (
+    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+      <CompleteProfileContent />
+    </Suspense>
   );
 }
