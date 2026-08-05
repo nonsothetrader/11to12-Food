@@ -1,0 +1,183 @@
+{
+  "entities": {
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Represents a user's profile information.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the UserProfile entity." },
+        "name": { "type": "string", "description": "The user's full name." },
+        "email": { "type": "string", "description": "The user's email address.", "format": "email" },
+        "subscriptionPlanId": { "type": "string", "description": "Reference to SubscriptionPlan." },
+        "deliveryAddress": { "type": "string", "description": "The user's delivery address." },
+        "phoneNumber": { "type": "string", "description": "User's phone number." },
+        "gender": { "type": "string", "enum": ["male", "female", "prefer-not-to-say"] },
+        "dateOfBirth": { "type": "string", "format": "date" },
+        "occupation": { "type": "string" },
+        "company": { "type": "string", "description": "User's company." },
+        "workSchedule": { "type": "string", "enum": ["9-5", "hybrid", "remote", "student", "other"] },
+        "workLocation": { "type": "string", "description": "User's work/hub location." },
+        "residenceArea": { "type": "string", "description": "User's residence area." },
+        "lunchTime": { "type": "string", "enum": ["11:00", "11:30", "12:00-or-after"] },
+        "mealTypes": { "type": "array", "items": { "type": "string" } },
+        "spiceLevel": { "type": "string", "enum": ["mild", "medium", "hot"] },
+        "proteins": { "type": "array", "items": { "type": "string" } },
+        "allergies": { "type": "string" },
+        "dislikes": { "type": "string" },
+        "lunchHabit": { "type": "string", "enum": ["work", "home", "both"] },
+        "referralSource": { "type": "string", "enum": ["instagram", "friend", "office-hub", "other"] }
+      },
+      "required": ["id", "name", "email"]
+    },
+    "SubscriptionPlan": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SubscriptionPlan",
+      "type": "object",
+      "description": "Represents a subscription plan.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the SubscriptionPlan entity." },
+        "name": { "type": "string", "description": "The name of the subscription plan." },
+        "description": { "type": "string", "description": "A description of the subscription plan." },
+        "price": { "type": "number", "description": "The price of the subscription plan." },
+        "mealCredits": { "type": "number", "description": "The number of meal credits in the plan." }
+      },
+      "required": ["id", "name", "description", "price", "mealCredits"]
+    },
+    "WeeklyMenu": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "WeeklyMenu",
+      "type": "object",
+      "description": "Represents the weekly menu.",
+      "properties": {
+        "id": { "type": "string" },
+        "weekStartDate": { "type": "string", "format": "date-time" },
+        "menuItems": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["id", "weekStartDate", "menuItems"]
+    },
+    "MenuItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "MenuItem",
+      "type": "object",
+      "description": "Represents an individual menu item.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string", "format": "uri" }
+      },
+      "required": ["id", "name", "description", "imageUrl"]
+    },
+    "MealChoice": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "MealChoice",
+      "type": "object",
+      "description": "Represents a user's meal choice for a particular day.",
+      "properties": {
+        "id": { "type": "string" },
+        "userProfileId": { "type": "string" },
+        "menuItemId": { "type": "string" },
+        "choiceDate": { "type": "string", "format": "date-time" },
+        "choiceType": { "type": "string", "enum": ["default", "skip", "surprise"] }
+      },
+      "required": ["id", "userProfileId", "choiceDate", "choiceType"]
+    },
+    "PaymentHistory": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PaymentHistory",
+      "type": "object",
+      "description": "Represents a user's payment history.",
+      "properties": {
+        "id": { "type": "string" },
+        "userProfileId": { "type": "string" },
+        "paymentDate": { "type": "string", "format": "date-time" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "transactionId": { "type": "string" }
+      },
+      "required": ["id", "userProfileId", "paymentDate", "amount", "paymentMethod", "transactionId"]
+    }
+  },
+  "auth": {
+    "providers": ["password", "anonymous", "google.com"]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}/profile/{profileId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": { "$ref": "#/backend/entities/UserProfile" },
+          "description": "Stores user profile information. The `userId` parameter ensures path-based ownership.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "profileId", "description": "The unique identifier of the user profile." }
+          ]
+        }
+      },
+      {
+        "path": "/subscriptionPlans/{subscriptionPlanId}",
+        "definition": {
+          "entityName": "SubscriptionPlan",
+          "schema": { "$ref": "#/backend/entities/SubscriptionPlan" },
+          "description": "Stores subscription plan details. Open to all users.",
+          "params": [{ "name": "subscriptionPlanId", "description": "The unique identifier of the plan." }]
+        }
+      },
+      {
+        "path": "/weeklyMenus/{weeklyMenuId}",
+        "definition": {
+          "entityName": "WeeklyMenu",
+          "schema": { "$ref": "#/backend/entities/WeeklyMenu" },
+          "description": "Stores weekly menu information, accessible by all users.",
+          "params": [{ "name": "weeklyMenuId", "description": "The unique identifier of the menu." }]
+        }
+      },
+      {
+        "path": "/menuItems/{menuItemId}",
+        "definition": {
+          "entityName": "MenuItem",
+          "schema": { "$ref": "#/backend/entities/MenuItem" },
+          "description": "Stores individual menu item details, accessible by all users.",
+          "params": [{ "name": "menuItemId", "description": "The unique identifier of the item." }]
+        }
+      },
+      {
+        "path": "/users/{userId}/mealChoices/{mealChoiceId}",
+        "definition": {
+          "entityName": "MealChoice",
+          "schema": { "$ref": "#/backend/entities/MealChoice" },
+          "description": "Stores user's meal choices. `userId` ensures path-based ownership.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "mealChoiceId", "description": "The unique identifier of the choice." }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/paymentHistory/{paymentHistoryId}",
+        "definition": {
+          "entityName": "PaymentHistory",
+          "schema": { "$ref": "#/backend/entities/PaymentHistory" },
+          "description": "Stores user's payment history. `userId` ensures path-based ownership.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "paymentHistoryId", "description": "The unique identifier of the payment entry." }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "admin",
+          "schema": { "$ref": "#/backend/entities/UserProfile" },
+          "description": "Collection to store admin roles. Document existence grants admin privileges.",
+          "params": [{ "name": "userId", "description": "The user's ID with admin privileges." }]
+        }
+      }
+    ],
+    "reasoning": "The structure is designed for security and scalability. User-specific data is nested under `/users/{userId}` to leverage path-based security rules, ensuring users can only access their own information. Global data like subscription plans and menus are in root collections for public access. The `UserProfile` entity is expanded to include all fields from the new onboarding form, allowing for rich user profiles and future personalization."
+  }
+}
+    
