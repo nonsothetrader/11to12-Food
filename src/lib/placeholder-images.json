@@ -1,0 +1,106 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "A delicious healthy meal",
+      "imageUrl": "https://i.ibb.co/R4hHrmR8/0918-ezgif-com-video-to-gif-converter.gif",
+      "imageHint": "healthy meal slideshow"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Avatar of Sarah J.",
+      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTYyOTkwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Avatar of Michael B.",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk2NzcyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Avatar of Emily R.",
+      "imageUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU5NjI0NTg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "dash-meal-6",
+      "description": "Chef's Special Pizza",
+      "imageUrl": "https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaXp6YSUyMHNsaWNlfGVufDB8fHx8MTc1OTU4Njc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pizza slice"
+    },
+    {
+      "id": "dash-meal-7",
+      "description": "Hearty Lentil Shepherd's Pie",
+      "imageUrl": "https://images.unsplash.com/photo-1664187878525-b8ad94fe569b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaGVwaGVyZHMlMjBwaWV8ZW58MHx8fHwxNzU5NTkwNjk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shepherds pie"
+    },
+    {
+      "id": "free-trial-bag",
+      "description": "A plastic bag with food",
+      "imageUrl": "https://i.ibb.co/KxHTqtKn/food-bag-2.png",
+      "imageHint": "food bag"
+    },
+    {
+      "id": "dish-jollof-rice",
+      "description": "Jollof Rice with Grilled Chicken & Plantain",
+      "imageUrl": "https://images.unsplash.com/photo-1664993101841-036f189719b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxqb2xsb2YlMjByaWNlJTIwY2hpY2tlbnxlbnwwfHx8fDE3NTk2ODc2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jollof rice chicken"
+    },
+    {
+      "id": "dish-fried-rice",
+      "description": "Fried Rice with Stir-Fry Beef Strips",
+      "imageUrl": "https://images.unsplash.com/photo-1569723650490-5d19d91749a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmcmllZCUyMHJpY2UlMjBiZWVmfGVufDB8fHx8MTc1OTY4NzY0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fried rice beef"
+    },
+    {
+      "id": "dish-yam-porridge",
+      "description": "Yam Porridge with Diced Fish & Veggies",
+      "imageUrl": "https://images.unsplash.com/photo-1682692095202-d614350c6821?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5YW0lMjBwb3JyaWRnZXxlbnwwfHx8fDE3NTk2ODc2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yam porridge"
+    },
+    {
+      "id": "dish-beans-plantain",
+      "description": "Beans & Dodo with Peppered Sauce",
+      "imageUrl": "https://images.unsplash.com/photo-1721051651514-0270a6932329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YmVhbnMlMjBwbGFudGFpbnxlbnwwfHx8fDE3NTk2ODc2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beans plantain"
+    },
+    {
+      "id": "dish-spaghetti-beef",
+      "description": "Spaghetti Jollof with Turkey Bites",
+      "imageUrl": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxqb2xsb2YlMjBzcGFnaGV0dGl8ZW58MHx8fHwxNzU5Njg3NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jollof spaghetti"
+    },
+    {
+      "id": "dish-ofada-rice",
+      "description": "Ofada Rice & Sauce (Ayamase)",
+      "imageUrl": "https://images.unsplash.com/photo-1686820740687-426a7b9b2043?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvZmFkYSUyMHJpY2V8ZW58MHx8fHwxNzU5Njg3NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ofada rice"
+    },
+    {
+      "id": "dish-sweet-potato",
+      "description": "Sweet Potatoes & Egg Sauce",
+      "imageUrl": "https://images.unsplash.com/photo-1601368135477-472a330882a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzd2VldCUyMHBvdGF0byUyMGVnZ3xlbnwwfHx8fDE3NTk2ODc2NDZ8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "sweet potato egg"
+    },
+    {
+      "id": "dish-coconut-rice",
+      "description": "Coconut Rice with Peppered Gizzard",
+      "imageUrl": "https://images.unsplash.com/photo-1638517307486-4c2ae5c645764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2NvbnV0JTIwcmljZSUyMGdpenphcmR8ZW58MHx8fHwxNzU5Njg3NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coconut rice gizzard"
+    },
+    {
+      "id": "dish-okra-eba",
+      "description": "Small Chops Combo with Chapman Drink",
+      "imageUrl": "https://images.unsplash.com/photo-1601917033492-9bd714e00415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c21hbGwlMjBjaG9wc3xlbnwwfHx8fDE3NTk2ODc2NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "small chops"
+    },
+    {
+      "id": "dish-veg-sauce",
+      "description": "White Rice, Chicken Stew & Cabbage Slaw",
+      "imageUrl": "https://images.unsplash.com/photo-1705313381636-672463bfa6fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyaWNlJTIwY2hpY2tlbiUyMHN0ZXd8ZW58MHx8fHwxNzU5Njg3NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rice chicken stew"
+    }
+  ]
+}
